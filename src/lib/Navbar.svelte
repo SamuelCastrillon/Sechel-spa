@@ -1,24 +1,25 @@
-<script>
-  import { navLinks } from '../data/navigation.js';
+<script lang="ts">
+  import { ExternalLink } from 'lucide-svelte';
+  import { navLinks } from '../data/navigation.ts';
   import MobileMenu from './MobileMenu.svelte';
 </script>
 
-<header class="navbar">
-  <div class="container navbar-inner">
-    <a href="#top" class="logo">
-      <span class="logo-mark">S</span>
-      <span class="logo-text">Sechel</span>
+<header class="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-sm">
+  <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16">
+    <a href="#top" class="flex items-center gap-2 no-underline text-[var(--foreground)] font-bold text-lg tracking-tight">
+      <span class="flex items-center justify-center w-8 h-8 border border-primary bg-[var(--accent)] text-[var(--primary-foreground)] text-xs font-bold">S</span>
+      <span>Sechel</span>
     </a>
 
-    <nav class="nav-desktop">
+    <nav class="hidden md:flex items-center gap-1">
       {#each navLinks as link}
         {#if link.external}
-          <a href={link.href} target="_blank" rel="noopener noreferrer" class="nav-link">
+          <a href={link.href} target="_blank" rel="noopener noreferrer" class="px-3 py-2 text-sm text-[var(--on-surface-variant)] no-underline transition-colors border border-transparent hover:text-[var(--foreground)] hover:border-[var(--border)]">
             {link.label}
-            <span class="external-icon">↗</span>
+            <ExternalLink size={12} class="inline ml-0.5" />
           </a>
         {:else}
-          <a href={link.href} class="nav-link">
+          <a href={link.href} class="px-3 py-2 text-sm text-[var(--on-surface-variant)] no-underline transition-colors border border-transparent hover:text-[var(--foreground)] hover:border-[var(--border)]">
             {link.label}
           </a>
         {/if}
@@ -28,76 +29,3 @@
     <MobileMenu {navLinks} />
   </div>
 </header>
-
-<style>
-  .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 40;
-    border-bottom: 1px solid var(--border);
-    background: color-mix(in srgb, var(--background) 95%, transparent);
-    backdrop-filter: blur(8px);
-  }
-
-  .navbar-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 4rem;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: var(--foreground);
-    font-weight: 700;
-    font-size: 1.125rem;
-    letter-spacing: -0.02em;
-  }
-
-  .logo-mark {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid var(--primary);
-    background: var(--accent);
-    color: var(--primary-foreground);
-    font-size: 0.75rem;
-    font-weight: 700;
-  }
-
-  .nav-desktop {
-    display: none;
-    align-items: center;
-    gap: 0.25rem;
-  }
-
-  @media (min-width: 768px) {
-    .nav-desktop {
-      display: flex;
-    }
-  }
-
-  .nav-link {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.875rem;
-    color: var(--on-surface-variant);
-    text-decoration: none;
-    transition: color 0.15s;
-    border: 1px solid transparent;
-  }
-
-  .nav-link:hover {
-    color: var(--foreground);
-    border-color: var(--border);
-  }
-
-  .external-icon {
-    font-size: 0.7rem;
-    margin-left: 0.2rem;
-  }
-</style>

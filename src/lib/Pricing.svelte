@@ -1,5 +1,15 @@
-<script>
-  const plans = [
+<script lang="ts">
+  interface Plan {
+    name: string;
+    price: string;
+    description: string;
+    features: string[];
+    cta: string;
+    ctaHref: string;
+    featured: boolean;
+  }
+
+  const plans: Plan[] = [
     {
       name: 'Self-Hosted',
       price: 'Free',
@@ -8,7 +18,7 @@
         'All 23 MCP tools',
         'Unlimited projects & users per instance',
         'Turso/libSQL database',
-        ' Vercel one-click deploy',
+        'Vercel one-click deploy',
       ],
       cta: 'Deploy to Vercel',
       ctaHref: 'https://vercel.com/new',
@@ -31,30 +41,46 @@
   ];
 </script>
 
-<section id="pricing" class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="text-section">Pricing</h2>
-      <p>Open source, transparent, and built for developers.</p>
+<section id="pricing" class="py-20 border-b border-[var(--border)]">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-[clamp(1.75rem,4vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.02em]">Pricing</h2>
+      <p class="mt-3 max-w-[600px] mx-auto text-[var(--on-surface-variant)]">Open source, transparent, and built for developers.</p>
     </div>
 
-    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+    <div class="flex gap-6 justify-center flex-wrap">
       {#each plans as plan}
-        <article class="pricing-card" class:featured={plan.featured}>
-          <h3 class="pricing-name">{plan.name}</h3>
-          <div class="pricing-price">
-            <span class="pricing-amount">{plan.price}</span>
+        <article
+          class="flex-1 min-w-[280px] max-w-[380px] border border-[var(--border)] bg-[var(--surface)] p-8 flex flex-col gap-4"
+          class:border-[var(--accent)]={plan.featured}
+          class:bg-[var(--card)]={plan.featured}
+        >
+          <h3 class="text-sm uppercase tracking-[0.08em] text-[var(--muted-foreground)]">{plan.name}</h3>
+          <div>
+            <span class="text-4xl font-extrabold tracking-tight">{plan.price}</span>
           </div>
-          <p class="pricing-desc">{plan.description}</p>
+          <p class="text-xs text-[var(--on-surface-variant)]">{plan.description}</p>
 
-          <ul class="pricing-features">
+          <ul class="list-none flex flex-col gap-2 flex-1">
             {#each plan.features as feature}
-              <li>{feature}</li>
+              <li class="text-xs text-[var(--on-surface)] pl-5 relative before:content-['→'] before:absolute before:left-0 before:text-primary">{feature}</li>
             {/each}
           </ul>
 
-          <a href={plan.ctaHref} class="btn" class:btn-primary={plan.featured} class:btn-outline={!plan.featured}
-            target="_blank" rel="noopener noreferrer">
+          <a
+            href={plan.ctaHref}
+            class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold no-underline cursor-pointer transition-all"
+            class:bg-primary={plan.featured}
+            class:text-[var(--primary-foreground)]={plan.featured}
+            class:hover:bg-[#c7aaff]={plan.featured}
+            class:bg-transparent={!plan.featured}
+            class:text-[var(--foreground)]={!plan.featured}
+            class:border={!plan.featured}
+            class:border-[var(--border)]={!plan.featured}
+            class:hover:border-[var(--foreground)]={!plan.featured}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {plan.cta}
           </a>
         </article>
@@ -62,62 +88,3 @@
     </div>
   </div>
 </section>
-
-<style>
-  .pricing-card {
-    flex: 1;
-    min-width: 280px;
-    max-width: 380px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .pricing-card.featured {
-    border-color: var(--accent);
-    background: var(--card);
-  }
-
-  .pricing-name {
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--muted-foreground);
-  }
-
-  .pricing-amount {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-  }
-
-  .pricing-desc {
-    font-size: 0.85rem;
-    color: var(--on-surface-variant);
-  }
-
-  .pricing-features {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    flex: 1;
-  }
-
-  .pricing-features li {
-    font-size: 0.85rem;
-    color: var(--on-surface);
-    padding-left: 1.25rem;
-    position: relative;
-  }
-
-  .pricing-features li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: var(--primary);
-  }
-</style>
