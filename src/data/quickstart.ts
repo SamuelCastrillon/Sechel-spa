@@ -1,8 +1,10 @@
-export const platforms = [
+import type { Platform } from '../types';
+
+export const platforms: Platform[] = [
   {
     id: 'claude-code',
     name: 'Claude Code',
-    icon: '🤖',
+    icon: 'Bot',
     language: 'json',
     snippet: `{
   "mcpServers": {
@@ -15,7 +17,7 @@ export const platforms = [
   {
     id: 'cursor',
     name: 'Cursor',
-    icon: '🖥️',
+    icon: 'Monitor',
     language: 'json',
     snippet: `{
   "mcpServers": {
@@ -28,7 +30,7 @@ export const platforms = [
   {
     id: 'opencode',
     name: 'OpenCode',
-    icon: '⌨️',
+    icon: 'Keyboard',
     language: 'json',
     snippet: `{
   "mcpServers": {
@@ -41,7 +43,7 @@ export const platforms = [
   {
     id: 'gemini-cli',
     name: 'Gemini CLI',
-    icon: '✨',
+    icon: 'Sparkles',
     language: 'yaml',
     snippet: `sechel:
   url: "https://your-sechel.vercel.app/api/mcp"`,

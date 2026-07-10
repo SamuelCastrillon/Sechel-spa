@@ -1,4 +1,6 @@
-export const navLinks = [
+import type { NavLink } from '../types';
+
+export const navLinks: NavLink[] = [
   { href: '#features', label: 'Features' },
   { href: '#how-it-works', label: 'How It Works' },
   { href: '#quickstart', label: 'Quickstart' },
@@ -6,7 +8,7 @@ export const navLinks = [
   { href: 'https://github.com/SamuelCastrillon/Sechel', label: 'GitHub', external: true },
 ];
 
-export const footerLinks = [
+export const footerLinks: { title: string; links: NavLink[] }[] = [
   {
     title: 'Product',
     links: [
@@ -24,7 +26,7 @@ export const footerLinks = [
   },
 ];
 
-export const socialLinks = [
+export const socialLinks: { href: string; label: string; external?: boolean }[] = [
   { href: 'https://github.com/SamuelCastrillon/Sechel', label: 'GitHub', external: true },
   { href: '#features', label: 'Features' },
   { href: 'https://x.com/gentleman_prog', label: 'X / Twitter', external: true },
