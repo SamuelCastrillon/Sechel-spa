@@ -1,28 +1,16 @@
 {
   "name": "sechel-spa",
-  "version": "0.1.0",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "^15.0.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.0",
-    "@types/node": "^20.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^4.0.0",
-    "typescript": "^5.4.0"
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "svelte": "^5.56.4",
+    "vite": "^8.1.1"
   }
 }

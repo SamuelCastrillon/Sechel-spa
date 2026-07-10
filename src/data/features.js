@@ -1,0 +1,58 @@
+export const features = [
+  {
+    id: 'persistent-memory',
+    title: 'Persistent Memory',
+    description: 'Save and recall context across AI coding sessions. No more starting from scratch.',
+    icon: '🧠',
+    category: 'Memory',
+  },
+  {
+    id: 'smart-upsert',
+    title: 'Smart Upsert',
+    description: 'Automatically deduplicate and merge related memories using topic keys and FTS5 search.',
+    icon: '🔄',
+    category: 'Memory',
+  },
+  {
+    id: 'fulltext-search',
+    title: 'Full-Text Search',
+    description: 'Search across all stored memories with BM25-ranked results using SQLite FTS5.',
+    icon: '🔍',
+    category: 'Query',
+  },
+  {
+    id: 'session-timeline',
+    title: 'Session Timeline',
+    description: 'Navigate chronological memory history to understand how decisions evolved over time.',
+    icon: '📋',
+    category: 'Query',
+  },
+  {
+    id: 'session-context',
+    title: 'Session Context',
+    description: 'Automatically surface relevant recent context at the start of each new coding session.',
+    icon: '💬',
+    category: 'Context',
+  },
+  {
+    id: 'mcp-integration',
+    title: 'MCP Native',
+    description: 'Seamless Model Context Protocol — works with Claude Code, Cursor, OpenCode, and more.',
+    icon: '🔧',
+    category: 'Tools',
+  },
+  {
+    id: '23-tools',
+    title: '23 MCP Tools',
+    description: 'Comprehensive suite covering memory, search, session management, and system utilities.',
+    icon: '🧰',
+    category: 'Tools',
+  },
+  {
+    id: 'self-hosted',
+    title: 'Self-Hosted',
+    description: 'MIT licensed. Deploy on Vercel + Turso. Full control of your data.',
+    icon: '🛡️',
+    category: 'Deploy',
+  },
+];
