@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Navbar from './lib/Navbar.svelte';
   import HeroSection from './lib/HeroSection.svelte';
   import FeatureGrid from './lib/FeatureGrid.svelte';
