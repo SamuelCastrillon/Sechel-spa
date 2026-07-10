@@ -1,3 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0c0c0c;
+  --color-fg: #e7e0ec;
+  --color-primary: #d3bbff;
+  --color-primary-container: #5b21b6;
+  --color-surface: #131313;
+  --color-surface-2: #191a1a;
+  --color-surface-3: #202020;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-label: 'Public Sans', system-ui, -apple-system, sans-serif;
+  --radius-default: 4px;
+}
+
 /* Sechel Design System — Cyber-Brutalist Terminal */
 :root {
   --background: #0c0c0c;
