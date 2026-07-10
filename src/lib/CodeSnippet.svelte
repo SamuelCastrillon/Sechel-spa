@@ -1,5 +1,7 @@
-<script>
-  let { label = '', code = '', lang = 'bash' } = $props();
+<script lang="ts">
+  import { Copy, Check } from 'lucide-svelte';
+
+  let { code = '', language = 'bash' }: { code: string; language?: string } = $props();
 
   let copied = $state(false);
 
@@ -9,7 +11,6 @@
       copied = true;
       setTimeout(() => copied = false, 2000);
     } catch {
-      // fallback
       const el = document.createElement('textarea');
       el.value = code;
       document.body.appendChild(el);
@@ -22,67 +23,19 @@
   }
 </script>
 
-<div class="code-block-wrapper">
-  <div class="code-block-header">
-    <span>{label}</span>
-    <button class="copy-btn" class:copied onclick={copy}>
-      {copied ? 'Copied!' : 'Copy'}
+<div class="w-full">
+  <div class="flex items-center justify-between px-4 py-2 bg-black border border-[var(--border)] border-b-0 text-xs uppercase tracking-wider text-[var(--muted-foreground)] font-mono">
+    <span>{language}</span>
+    <button
+      class="bg-transparent border px-2 py-0.5 text-xs cursor-pointer font-mono transition-all duration-150 hover:text-[var(--foreground)] hover:border-[var(--foreground)] {copied ? 'text-[var(--tertiary)] border-[var(--tertiary)]' : 'text-[var(--muted-foreground)] border-[var(--border)]'}"
+      onclick={copy}
+    >
+      {#if copied}
+        <Check size={12} />
+      {:else}
+        <Copy size={12} />
+      {/if}
     </button>
   </div>
-  <pre class="code-block"><code>{code}</code></pre>
+  <pre class="bg-black border border-[var(--border)] p-4 m-0 overflow-x-auto whitespace-pre font-mono text-sm leading-relaxed text-fg"><code>{code}</code></pre>
 </div>
-
-<style>
-  .code-block-wrapper {
-    width: 100%;
-  }
-
-  .code-block-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-    background: #000;
-    border: 1px solid var(--border);
-    border-bottom: none;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--muted-foreground);
-    font-family: var(--font-mono);
-  }
-
-  .code-block {
-    background: #000;
-    border: 1px solid var(--border);
-    padding: 1rem;
-    margin: 0;
-    overflow-x: auto;
-    white-space: pre;
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    line-height: 1.6;
-    color: #e7e0ec;
-  }
-
-  .copy-btn {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted-foreground);
-    padding: 0.2rem 0.5rem;
-    font-size: 0.7rem;
-    cursor: pointer;
-    font-family: var(--font-mono);
-    transition: all 0.15s;
-  }
-
-  .copy-btn:hover {
-    color: var(--foreground);
-    border-color: var(--foreground);
-  }
-
-  .copy-btn.copied {
-    color: var(--tertiary);
-    border-color: var(--tertiary);
-  }
-</style>
