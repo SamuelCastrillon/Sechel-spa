@@ -80,14 +80,14 @@
             <h2 class="text-xl font-bold uppercase tracking-widest">Configuration Update</h2>
           </div>
           <p class="text-fg/80 leading-relaxed max-w-2xl">
-            Locate your
+            Locate your config file
             <code class="bg-accent/20 px-1 text-primary font-mono">
-              {activePlatform.id === 'claude-code' ? '~/.claude.json' :
-               activePlatform.id === 'cursor' ? '.cursor/mcp.json' :
-               activePlatform.id === 'opencode' ? 'opencode.json' :
-               '~/.gemini/settings.json'}
+              {activePlatform.id === 'claude-code' ? '~/.claude.json (user) or .mcp.json (project)' :
+               activePlatform.id === 'cursor' ? '~/.cursor/mcp.json (global) or .cursor/mcp.json (project)' :
+               activePlatform.id === 'opencode' ? '~/.config/opencode/opencode.json (user) or opencode.json (project)' :
+               '~/.gemini/settings.json (user) or .gemini/settings.json (project)'}
             </code>
-            file. Paste the following block into the
+            . Paste the following block into the
             <code class="bg-accent/20 px-1 text-primary font-mono">
               {activePlatform.id === 'opencode' ? 'mcp' : 'mcpServers'}
             </code>
