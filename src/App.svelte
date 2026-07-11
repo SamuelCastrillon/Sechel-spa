@@ -4,6 +4,7 @@
   import FeatureGrid from './lib/FeatureGrid.svelte';
   import HowItWorks from './lib/HowItWorks.svelte';
   import QuickStart from './lib/QuickStart.svelte';
+  import ApiDocs from './lib/ApiDocs.svelte';
   import Footer from './lib/Footer.svelte';
 </script>
 
@@ -13,5 +14,6 @@
   <FeatureGrid />
   <HowItWorks />
   <QuickStart />
+  <ApiDocs />
 </main>
 <Footer />

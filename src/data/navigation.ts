@@ -4,7 +4,7 @@ export const navLinks: NavLink[] = [
   { href: '#features', label: 'Features' },
   { href: '#how-it-works', label: 'How It Works' },
   { href: '#quickstart', label: 'Quickstart' },
-  { href: '#pricing', label: 'Pricing' },
+  { href: '#apidocs', label: 'API Docs' },
   { href: 'https://github.com/SamuelCastrillon/Sechel', label: 'GitHub', external: true },
 ];
 
@@ -15,6 +15,7 @@ export const footerLinks: { title: string; links: NavLink[] }[] = [
       { href: '#features', label: 'Features' },
       { href: '#how-it-works', label: 'How It Works' },
       { href: '#quickstart', label: 'Quickstart' },
+      { href: '#apidocs', label: 'API Docs' },
     ],
   },
   {
