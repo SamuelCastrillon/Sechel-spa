@@ -33,7 +33,7 @@
   <div class="max-w-5xl mx-auto px-6">
     <!-- Header -->
     <header class="mb-16 border-l-4 border-accent pl-6">
-      <h1 class="text-6xl md:text-8xl font-black font-headline uppercase tracking-tighter leading-none mb-4">
+      <h1 class="text-5xl md:text-7xl font-black font-headline uppercase tracking-tighter leading-none mb-4">
         Quick Start
       </h1>
       <p class="text-xl md:text-2xl text-primary font-light tracking-tight">
