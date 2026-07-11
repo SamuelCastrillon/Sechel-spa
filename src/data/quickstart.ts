@@ -33,9 +33,11 @@ export const platforms: Platform[] = [
     icon: 'Keyboard',
     language: 'json',
     snippet: `{
-  "mcpServers": {
+  "mcp": {
     "sechel": {
-      "url": "https://your-sechel.vercel.app/api/mcp"
+      "type": "remote",
+      "url": "https://your-sechel.vercel.app/api/mcp",
+      "enabled": true
     }
   }
 }`,
@@ -44,8 +46,14 @@ export const platforms: Platform[] = [
     id: 'gemini-cli',
     name: 'Gemini CLI',
     icon: 'Sparkles',
-    language: 'yaml',
-    snippet: `sechel:
-  url: "https://your-sechel.vercel.app/api/mcp"`,
+    language: 'json',
+    snippet: `{
+  "mcpServers": {
+    "sechel": {
+      "url": "https://your-sechel.vercel.app/api/mcp",
+      "timeout": 30000
+    }
+  }
+}`,
   },
 ];
