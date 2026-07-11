@@ -4,13 +4,14 @@
   let terminalCopied = $state(false);
 
   async function copyTerminal() {
+    const cmds = `git clone https://github.com/SamuelCastrillon/Sechel\ncd Sechel && vercel deploy`;
     try {
-      await navigator.clipboard.writeText('npx sechel');
+      await navigator.clipboard.writeText(cmds);
       terminalCopied = true;
       setTimeout(() => terminalCopied = false, 2000);
     } catch {
       const el = document.createElement('textarea');
-      el.value = 'npx sechel';
+      el.value = cmds;
       document.body.appendChild(el);
       el.select();
       document.execCommand('copy');
@@ -44,22 +45,32 @@
     </p>
 
     <!-- Terminal Code Block -->
-    <div class="w-full max-w-2xl bg-[#121212] border-2 border-accent mb-12 group transition-all hover:border-primary/50 relative">
-      <!-- Terminal Header -->
+      <div class="w-full max-w-2xl bg-[#121212] border-2 border-accent mb-12 group transition-all hover:border-primary/50 relative">
+        <!-- Terminal Header -->
       <div class="flex items-center justify-between px-4 py-2 bg-accent/10 border-b border-accent">
         <div class="flex gap-1.5">
           <div class="w-3 h-3 bg-accent/40"></div>
           <div class="w-3 h-3 bg-accent/40"></div>
           <div class="w-3 h-3 bg-accent/40"></div>
         </div>
-        <div class="text-[10px] font-mono text-primary uppercase tracking-widest">bash &mdash; sechel-init</div>
+        <div class="text-[10px] font-mono text-primary uppercase tracking-widest">deploy &mdash; vercel</div>
       </div>
       <!-- Terminal Body -->
-      <div class="p-6 md:p-8 flex items-center justify-between font-mono">
-        <div class="flex items-center gap-4 text-primary md:text-2xl">
-          <span class="text-accent/60 opacity-50">$</span>
-          <span>npx sechel <span class="terminal-cursor"></span></span>
+      <div class="p-6 md:p-8 font-mono text-primary md:text-base space-y-2">
+        <div class="flex items-center gap-3">
+          <span class="text-accent/60 opacity-50 w-4">$</span>
+          <span>git clone https://github.com/SamuelCastrillon/Sechel</span>
         </div>
+        <div class="flex items-center gap-3">
+          <span class="text-accent/60 opacity-50 w-4">$</span>
+          <span>cd Sechel &amp;&amp; vercel deploy</span>
+        </div>
+        <div class="flex items-center gap-3 text-accent/60 text-xs pt-2 border-t border-accent/20 mt-3">
+          <span class="text-green-400">✓</span>
+          <span>deployed at your-org.vercel.app</span>
+        </div>
+      </div>
+      <div class="border-t border-accent/20 px-4 py-3 flex justify-end">
         <button
           onclick={copyTerminal}
           class="flex items-center gap-2 px-3 py-1 bg-accent/20 hover:bg-primary hover:text-black transition-all text-primary border border-primary/20 text-xs uppercase tracking-widest font-bold cursor-pointer"

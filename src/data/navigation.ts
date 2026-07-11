@@ -19,16 +19,17 @@ export const footerLinks: { title: string; links: NavLink[] }[] = [
     ],
   },
   {
-    title: 'Community',
+    title: 'Owner',
     links: [
-      { href: 'https://github.com/SamuelCastrillon/Sechel', label: 'GitHub', external: true },
-      { href: 'https://x.com/gentleman_prog', label: 'X / Twitter', external: true },
+      { href: 'https://github.com/SamuelCastrillon', label: 'GitHub', external: true },
+      { href: 'https://x.com/SamuelC52055', label: 'X / Twitter', external: true },
+      { href: 'https://www.linkedin.com/in/samuel-castrill%C3%B3n/', label: 'LinkedIn', external: true },
     ],
   },
 ];
 
 export const socialLinks: { href: string; label: string; external?: boolean }[] = [
-  { href: 'https://github.com/SamuelCastrillon/Sechel', label: 'GitHub', external: true },
-  { href: '#features', label: 'Features' },
-  { href: 'https://x.com/gentleman_prog', label: 'X / Twitter', external: true },
+  { href: 'https://github.com/SamuelCastrillon', label: 'GitHub', external: true },
+  { href: 'https://x.com/SamuelC52055', label: 'X / Twitter', external: true },
+  { href: 'https://www.linkedin.com/in/samuel-castrill%C3%B3n/', label: 'LinkedIn', external: true },
 ];
