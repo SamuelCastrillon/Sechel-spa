@@ -3,16 +3,26 @@
   import FeatureCard from './FeatureCard.svelte';
 </script>
 
-<section id="features" class="py-20 border-b border-[var(--border)]">
-  <div class="max-w-[1200px] mx-auto px-6">
-    <div class="text-center mb-16">
-      <h2 class="text-[clamp(1.75rem,4vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.02em]">Features</h2>
-      <p class="mt-3 max-w-[600px] mx-auto text-[var(--on-surface-variant)]">Everything your AI agents need for persistent memory.</p>
+<section id="features" class="relative py-20 md:py-28 technical-grid border-b border-fg/20">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Header -->
+    <div class="mb-16">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="w-2 h-2 bg-primary"></span>
+        <span class="font-mono text-xs text-primary uppercase tracking-[0.3em]">System_Features</span>
+      </div>
+      <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none border-l-8 border-primary pl-6 mb-4">
+        Features
+      </h2>
+      <p class="font-mono text-lg md:text-xl text-fg/80 max-w-2xl border-b border-accent/30 pb-4">
+        Everything your AI agents need for persistent memory.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {#each features as feature (feature.id)}
-        <FeatureCard {...feature} />
+    <!-- Card Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-fg/20 border border-fg/20">
+      {#each features as feature, i (feature.id)}
+        <FeatureCard {...feature} index={i} />
       {/each}
     </div>
   </div>

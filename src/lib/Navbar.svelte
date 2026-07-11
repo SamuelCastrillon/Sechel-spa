@@ -1,31 +1,40 @@
 <script lang="ts">
-  import { ExternalLink } from 'lucide-svelte';
+  import { Terminal } from 'lucide-svelte';
   import { navLinks } from '../data/navigation.ts';
   import MobileMenu from './MobileMenu.svelte';
 </script>
 
-<header class="sticky top-0 z-40 border-b border-[var(--border)] bg-[var(--background)]/95 backdrop-blur-sm">
-  <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16">
-    <a href="#top" class="flex items-center gap-2 no-underline text-[var(--foreground)] font-bold text-lg tracking-tight">
-      <span class="flex items-center justify-center w-8 h-8 border border-primary bg-[var(--accent)] text-[var(--primary-foreground)] text-xs font-bold">S</span>
-      <span>Sechel</span>
+<nav class="bg-bg text-primary font-headline uppercase tracking-tighter text-sm font-bold fixed top-0 z-50 w-full border-b border-fg/20 flex justify-between items-center px-6 py-4">
+  <div class="flex items-center gap-8">
+    <a href="#top" class="font-display text-xl font-black tracking-widest text-primary border-b border-primary no-underline leading-none pb-0.5">
+      SECHEL_v0.2
     </a>
-
-    <nav class="hidden md:flex items-center gap-1">
+    <div class="hidden md:flex items-center gap-6">
       {#each navLinks as link}
         {#if link.external}
-          <a href={link.href} target="_blank" rel="noopener noreferrer" class="px-3 py-2 text-sm text-[var(--on-surface-variant)] no-underline transition-colors border border-transparent hover:text-[var(--foreground)] hover:border-[var(--border)]">
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-fg hover:text-primary hover:bg-accent/20 transition-colors duration-100 px-2 py-1 no-underline"
+          >
             {link.label}
-            <ExternalLink size={12} class="inline ml-0.5" />
           </a>
         {:else}
-          <a href={link.href} class="px-3 py-2 text-sm text-[var(--on-surface-variant)] no-underline transition-colors border border-transparent hover:text-[var(--foreground)] hover:border-[var(--border)]">
+          <a
+            href={link.href}
+            class="text-fg hover:text-primary hover:bg-accent/20 transition-colors duration-100 px-2 py-1 no-underline"
+          >
             {link.label}
           </a>
         {/if}
       {/each}
-    </nav>
-
+    </div>
+  </div>
+  <div class="flex items-center gap-4">
+    <button class="hover:bg-accent/20 transition-colors duration-100 p-2 flex items-center justify-center cursor-pointer text-fg hover:text-primary">
+      <Terminal size={18} />
+    </button>
     <MobileMenu {navLinks} />
   </div>
-</header>
+</nav>
