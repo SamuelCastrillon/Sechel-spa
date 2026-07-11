@@ -9,7 +9,10 @@ export const platforms: Platform[] = [
     snippet: `{
   "mcpServers": {
     "sechel": {
-      "url": "https://your-sechel.vercel.app/api/mcp"
+      "url": "https://your-sechel.vercel.app/api/mcp",
+      "headers": {
+        "Authorization": "Bearer <your-token>"
+      }
     }
   }
 }`,
@@ -22,7 +25,10 @@ export const platforms: Platform[] = [
     snippet: `{
   "mcpServers": {
     "sechel": {
-      "url": "https://your-sechel.vercel.app/api/mcp"
+      "url": "https://your-sechel.vercel.app/api/mcp",
+      "headers": {
+        "Authorization": "Bearer <your-token>"
+      }
     }
   }
 }`,
@@ -33,9 +39,14 @@ export const platforms: Platform[] = [
     icon: 'Keyboard',
     language: 'json',
     snippet: `{
-  "mcpServers": {
+  "mcp": {
     "sechel": {
-      "url": "https://your-sechel.vercel.app/api/mcp"
+      "type": "remote",
+      "url": "https://your-sechel.vercel.app/api/mcp",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer <your-token>"
+      }
     }
   }
 }`,
@@ -44,8 +55,17 @@ export const platforms: Platform[] = [
     id: 'gemini-cli',
     name: 'Gemini CLI',
     icon: 'Sparkles',
-    language: 'yaml',
-    snippet: `sechel:
-  url: "https://your-sechel.vercel.app/api/mcp"`,
+    language: 'json',
+    snippet: `{
+  "mcpServers": {
+    "sechel": {
+      "url": "https://your-sechel.vercel.app/api/mcp",
+      "headers": {
+        "Authorization": "Bearer <your-token>"
+      },
+      "timeout": 30000
+    }
+  }
+}`,
   },
 ];

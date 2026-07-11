@@ -4,6 +4,7 @@
   --color-bg: #0c0c0c;
   --color-fg: #e7e0ec;
   --color-primary: #d3bbff;
+  --color-accent: #5b21b6;
   --color-primary-container: #5b21b6;
   --color-surface: #131313;
   --color-surface-2: #191a1a;
@@ -11,7 +12,10 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   --font-label: 'Public Sans', system-ui, -apple-system, sans-serif;
-  --radius-default: 4px;
+  --font-headline: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --radius-default: 0px;
 }
 
 /* Sechel Design System — Cyber-Brutalist Terminal */
@@ -41,14 +45,6 @@
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -61,4 +57,47 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.2em;
+  background-color: #d3bbff;
+  vertical-align: middle;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.technical-grid {
+  background-image: radial-gradient(rgba(91, 33, 182, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(211, 187, 255, 0.1);
+  pointer-events: none;
+  animation: scanline 8s linear infinite;
+  z-index: 1;
+}
+
+@keyframes scanline {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(211, 187, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(211, 187, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
