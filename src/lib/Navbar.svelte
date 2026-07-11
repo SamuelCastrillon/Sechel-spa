@@ -6,8 +6,8 @@
 
 <nav class="bg-bg text-primary font-headline uppercase tracking-tighter text-sm font-bold fixed top-0 z-50 w-full border-b border-fg/20 flex justify-between items-center px-6 py-4">
   <div class="flex items-center gap-8">
-    <a href="#top" class="font-display text-xl font-black tracking-widest text-primary border-b border-primary no-underline leading-none pb-0.5 flex items-center gap-1.5">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
+    <a href="#top" class="font-display text-xl font-black tracking-widest text-primary no-underline flex items-center gap-1.5">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
         <rect x="4" y="4" width="16" height="16" rx="0" stroke="currentColor" stroke-width="1.5" />
         <rect x="7" y="7" width="10" height="10" rx="0" stroke="currentColor" stroke-width="1" opacity="0.6" />
         <line x1="4" y1="8" x2="2" y2="8" stroke="currentColor" stroke-width="1" />

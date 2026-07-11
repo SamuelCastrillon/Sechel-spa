@@ -8,7 +8,7 @@
     <div class="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-8">
       <div>
         <a href="#top" class="flex items-center gap-2 no-underline text-[var(--foreground)] font-bold text-lg">
-          <span class="flex items-center justify-center w-8 h-8 border border-primary bg-[var(--accent)] text-[var(--primary-foreground)]">
+          <span class="flex items-center justify-center w-8 h-8 text-primary">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5">
               <rect x="4" y="4" width="16" height="16" rx="0" stroke="currentColor" stroke-width="1.5" />
               <rect x="7" y="7" width="10" height="10" rx="0" stroke="currentColor" stroke-width="1" opacity="0.6" />
