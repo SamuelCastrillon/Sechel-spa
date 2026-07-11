@@ -2,29 +2,28 @@
   import { Brain, RefreshCw, Search, ClipboardList, MessageSquare, Wrench, Toolbox, Shield } from 'lucide-svelte';
   import type { Feature } from '../types';
 
-  let { icon = '', title = '', description = '', category = '' }: Feature = $props();
+  let {
+    icon = '', title = '', description = '', category = '', index = 0,
+  }: Feature & { index: number } = $props();
 
   const iconMap: Record<string, typeof Brain> = {
-    Brain,
-    RefreshCw,
-    Search,
-    ClipboardList,
-    MessageSquare,
-    Wrench,
-    Toolbox,
-    Shield,
+    Brain, RefreshCw, Search, ClipboardList, MessageSquare, Wrench, Toolbox, Shield,
   };
 
   let CurrentIcon = $derived(iconMap[icon]);
+
+  let step = $derived(String(index + 1).padStart(2, '0'));
 </script>
 
-<article class="border border-[var(--border)] bg-surface p-6 flex flex-col gap-3">
-  <span class="block text-fg">
-    {#if CurrentIcon}
-      <CurrentIcon size={24} />
-    {/if}
-  </span>
-  <h3 class="font-semibold text-[1.1rem]">{title}</h3>
-  <p class="text-sm text-[var(--on-surface-variant)] leading-relaxed">{description}</p>
-  <span class="inline-block font-mono text-[0.7rem] uppercase tracking-wider text-primary border border-primary-container px-2 py-0.5 mt-auto self-start">{category}</span>
-</article>
+<div class="group bg-bg p-8 hover:bg-accent/10 transition-all duration-300 flex flex-col">
+  <div class="mb-6 flex justify-between items-start">
+    <div class="bg-accent/20 p-3 text-primary">
+      {#if CurrentIcon}
+        <CurrentIcon size={28} />
+      {/if}
+    </div>
+    <span class="font-mono text-[10px] text-fg/40">{step}_{category.toUpperCase()}</span>
+  </div>
+  <h3 class="font-headline font-bold text-lg uppercase tracking-tight text-primary mb-4">{title}</h3>
+  <p class="font-label text-sm text-fg/70 leading-relaxed">{description}</p>
+</div>
