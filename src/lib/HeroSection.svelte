@@ -4,7 +4,7 @@
   let terminalCopied = $state(false);
 
   async function copyTerminal() {
-    const cmds = `git clone https://github.com/SamuelCastrillon/Sechel\ncd Sechel && vercel deploy`;
+    const cmds = `npm i -g @sechel-mcp/cli\nsechel`;
     try {
       await navigator.clipboard.writeText(cmds);
       terminalCopied = true;
@@ -41,7 +41,7 @@
 
     <!-- Subtitle -->
     <p class="font-label text-lg md:text-xl text-fg/70 max-w-2xl mb-12 tracking-tight">
-      Drop-in replacement for Engram. Same <code class="bg-accent/20 text-primary px-1 font-mono">mem_*</code> API, zero agent changes. Self-hosted on Vercel + Turso.
+      Drop-in replacement for Engram. Same <code class="bg-accent/20 text-primary px-1 font-mono">mem_*</code> API, zero agent changes. Self-hosted on Vercel + Turso, Cloudflare Workers, or Docker.
     </p>
 
     <!-- Terminal Code Block -->
@@ -53,21 +53,21 @@
           <div class="w-3 h-3 bg-accent/40"></div>
           <div class="w-3 h-3 bg-accent/40"></div>
         </div>
-        <div class="text-[10px] font-mono text-primary uppercase tracking-widest">deploy &mdash; vercel</div>
+        <div class="text-[10px] font-mono text-primary uppercase tracking-widest">install &mdash; npm</div>
       </div>
       <!-- Terminal Body -->
       <div class="p-6 md:p-8 font-mono text-primary md:text-base space-y-2">
         <div class="flex items-center gap-3">
           <span class="text-accent/60 opacity-50 w-4">$</span>
-          <span>git clone https://github.com/SamuelCastrillon/Sechel</span>
+          <span>npm i -g @sechel-mcp/cli</span>
         </div>
         <div class="flex items-center gap-3">
           <span class="text-accent/60 opacity-50 w-4">$</span>
-          <span>cd Sechel &amp;&amp; vercel deploy</span>
+          <span>sechel</span>
         </div>
         <div class="flex items-center gap-3 text-accent/60 text-xs pt-2 border-t border-accent/20 mt-3">
           <span class="text-green-400">✓</span>
-          <span>deployed at your-org.vercel.app</span>
+          <span>deployed at your-server.vercel.app</span>
         </div>
       </div>
       <div class="border-t border-accent/20 px-4 py-3 flex justify-end">

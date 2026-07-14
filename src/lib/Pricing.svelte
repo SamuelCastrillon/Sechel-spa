@@ -15,13 +15,13 @@
       price: 'Free',
       description: 'MIT licensed. Run your own instance.',
       features: [
-        'All 23 MCP tools',
+        'All 25 MCP tools',
         'Unlimited projects & users per instance',
         'Turso/libSQL database',
-        'Vercel one-click deploy',
+        'Vercel, Cloudflare Workers, or Docker deploy',
       ],
-      cta: 'Deploy to Vercel',
-      ctaHref: 'https://vercel.com/new',
+      cta: 'Deploy Now',
+      ctaHref: '#quickstart',
       featured: true,
     },
     {
