@@ -24,7 +24,7 @@
         <line x1="16" y1="20" x2="16" y2="22" stroke="currentColor" stroke-width="1" />
         <circle cx="12" cy="12" r="1.5" fill="currentColor" opacity="0.3" />
       </svg>
-      SECHEL_v0.2
+      SECHEL_v0.3
     </a>
     <div class="hidden md:flex items-center gap-6">
       {#each navLinks as link}
