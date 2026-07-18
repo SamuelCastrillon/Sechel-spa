@@ -371,6 +371,10 @@
 
   let doc = $derived(docs[activeTool]);
 
+  let activeCategory = $derived(
+    toolCategories.find(cat => cat.tools.includes(activeTool)) ?? toolCategories[0]
+  );
+
   async function copyCode() {
     try {
       await navigator.clipboard.writeText(doc.example);
@@ -393,8 +397,37 @@
       </p>
     </header>
 
-    <div class="flex gap-8">
-      <aside class="w-[300px] flex-shrink-0">
+    <!-- Mobile: category + tool pills -->
+    <div class="lg:hidden mb-8 space-y-3">
+      <div class="flex flex-wrap gap-2">
+        {#each toolCategories as category}
+          <button
+            class="flex-shrink-0 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest border transition-all {activeCategory.name === category.name ? 'bg-accent text-primary border-accent' : 'border-[var(--border)] text-[var(--muted-foreground)] hover:border-accent/50'}"
+            onclick={() => {
+              if (!category.tools.includes(activeTool)) {
+                activeTool = category.tools[0];
+              }
+            }}
+          >
+            {category.name}
+          </button>
+        {/each}
+      </div>
+      <hr class="border-[var(--border)]" />
+      <div class="flex flex-wrap gap-1.5">
+        {#each activeCategory.tools as tool}
+          <button
+            class="px-2.5 py-1 text-[10px] font-mono font-bold uppercase tracking-wider border transition-all {activeTool === tool ? 'bg-accent text-primary border-accent' : 'border-[var(--border)] text-[var(--muted-foreground)] hover:border-accent/50'}"
+            onclick={() => (activeTool = tool)}
+          >
+            {tool}
+          </button>
+        {/each}
+      </div>
+    </div>
+
+    <div class="flex flex-col lg:flex-row gap-8">
+      <aside class="hidden lg:block xl:w-[300px] lg:w-[240px] flex-shrink-0">
         <div class="border border-[var(--border)]">
           {#each toolCategories as category}
             <div>
@@ -435,7 +468,25 @@
         </div>
 
         {#if doc.parameters.length > 0}
-          <div class="border border-[var(--border)]">
+          <!-- Mobile: card layout -->
+          <div class="block lg:hidden border border-[var(--border)] divide-y divide-[var(--border)]">
+            {#each doc.parameters as param}
+              <div class="p-4 space-y-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="font-mono text-xs text-primary font-bold">{param.name}</span>
+                  <span class="font-mono text-[10px] text-[var(--foreground)]">{param.type}</span>
+                  {#if param.required}
+                    <span class="text-[10px] uppercase font-bold text-[var(--destructive)]">Required</span>
+                  {:else}
+                    <span class="text-[10px] uppercase text-[var(--muted-foreground)]">Optional</span>
+                  {/if}
+                </div>
+                <p class="text-xs text-[var(--on-surface-variant)]">{param.description}</p>
+              </div>
+            {/each}
+          </div>
+          <!-- Desktop: table layout -->
+          <div class="hidden lg:block border border-[var(--border)]">
             <div class="bg-[var(--muted)] px-4 py-2 border-b border-[var(--border)]">
               <span class="font-label text-[10px] uppercase tracking-[0.2em] text-[var(--muted-foreground)]">Parameters</span>
             </div>
