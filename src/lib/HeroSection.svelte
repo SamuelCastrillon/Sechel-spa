@@ -35,7 +35,7 @@
     </div>
 
     <!-- Headline -->
-    <h1 class="font-headline text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 max-w-5xl leading-[0.9] break-words hyphens">
+    <h1 class="font-headline text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 max-w-6xl leading-[0.9] break-words hyphens">
       Cloud Memory for Your <span class="text-primary italic">AI Agents</span>
     </h1>
 

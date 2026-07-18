@@ -30,7 +30,7 @@
 </script>
 
 <section id="quickstart" class="relative py-20 md:py-28 border-b border-fg/20">
-  <div class="max-w-5xl mx-auto px-6">
+  <div class="max-w-6xl mx-auto px-6">
     <!-- Header -->
     <header class="mb-16 border-l-4 border-accent pl-6">
       <h1 class="text-5xl md:text-7xl font-black font-headline uppercase tracking-tighter leading-none mb-4">
