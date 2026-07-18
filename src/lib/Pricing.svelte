@@ -42,13 +42,13 @@
 </script>
 
 <section id="pricing" class="py-20 border-b border-[var(--border)]">
-  <div class="max-w-[1200px] mx-auto px-6">
+  <div class="max-w-6xl mx-auto px-6">
     <div class="text-center mb-16">
       <h2 class="text-[clamp(1.75rem,4vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.02em]">Pricing</h2>
       <p class="mt-3 max-w-[600px] mx-auto text-[var(--on-surface-variant)]">Open source, transparent, and built for developers.</p>
     </div>
 
-    <div class="flex gap-6 justify-center flex-wrap">
+    <div class="flex-col sm:flex-row flex gap-6 justify-center flex-wrap">
       {#each plans as plan}
         <article
           class="flex-1 min-w-[280px] max-w-[380px] border border-[var(--border)] bg-[var(--surface)] p-8 flex flex-col gap-4"

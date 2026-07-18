@@ -9,7 +9,7 @@
 </script>
 
 <Navbar />
-<main>
+<main class="w-full">
   <HeroSection />
   <FeatureGrid />
   <HowItWorks />

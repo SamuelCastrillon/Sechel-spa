@@ -19,7 +19,7 @@
 
 <section id="how-it-works" class="relative py-20 md:py-28 technical-grid border-b border-fg/20 overflow-hidden">
   <div class="scanline"></div>
-  <div class="max-w-6xl mx-auto px-6 space-y-24">
+  <div class="max-w-6xl mx-auto px-6 space-y-16 md:space-y-24">
     <!-- Hero Header -->
     <section class="flex flex-col items-start gap-4">
       <div class="flex items-center gap-2 mb-2">
@@ -54,7 +54,7 @@
     <!-- Component Cards Section -->
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-fg/20 border border-fg/20">
       {#each nodes as node, i}
-        <div class="group bg-bg p-8 hover:bg-accent/10 transition-all duration-300">
+        <div class="group bg-bg p-6 md:p-8 hover:bg-accent/10 transition-all duration-300">
           <div class="mb-6 flex justify-between items-start">
             <div class="bg-accent/20 p-3 text-primary">
               <svelte:component this={icons[i]} size={28} />

@@ -35,17 +35,17 @@
     </div>
 
     <!-- Headline -->
-    <h1 class="font-headline text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 max-w-5xl leading-[0.9]">
+    <h1 class="font-headline text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 max-w-6xl leading-[0.9] break-words hyphens">
       Cloud Memory for Your <span class="text-primary italic">AI Agents</span>
     </h1>
 
     <!-- Subtitle -->
-    <p class="font-label text-lg md:text-xl text-fg/70 max-w-2xl mb-12 tracking-tight">
+    <p class="font-label text-lg md:text-xl text-fg/70 max-w-2xl mb-12 tracking-tight break-words">
       Drop-in replacement for Engram. Same <code class="bg-accent/20 text-primary px-1 font-mono">mem_*</code> API, zero agent changes. Self-hosted on Vercel + Turso, Cloudflare Workers, or Docker.
     </p>
 
     <!-- Terminal Code Block -->
-      <div class="w-full max-w-2xl bg-[#121212] border-2 border-accent mb-12 group transition-all hover:border-primary/50 relative">
+      <div class="w-full max-w-2xl bg-[#121212] border-2 border-accent mb-12 group transition-all hover:border-primary/50 relative overflow-x-auto">
         <!-- Terminal Header -->
       <div class="flex items-center justify-between px-4 py-2 bg-accent/10 border-b border-accent">
         <div class="flex gap-1.5">

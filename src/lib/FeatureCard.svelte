@@ -15,7 +15,7 @@
   let step = $derived(String(index + 1).padStart(2, '0'));
 </script>
 
-<div class="group bg-bg p-8 hover:bg-accent/10 transition-all duration-300 flex flex-col">
+<div class="group bg-bg p-6 md:p-8 hover:bg-accent/10 transition-all duration-300 flex flex-col">
   <div class="mb-6 flex justify-between items-start">
     <div class="bg-accent/20 p-3 text-primary">
       {#if CurrentIcon}
