@@ -1,5 +1,5 @@
 <footer class="bg-[#0c0c0c] border-t border-[#e7e0ec]/20 docked full-width bottom-0 z-50">
-  <div class="flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 gap-4">
+  <div class="flex flex-col md:flex-row justify-between items-center w-full px-4 md:px-6 py-6 md:py-8 gap-4">
     <div class="flex items-center gap-4">
       <span class="font-display font-bold text-[#e7e0ec] text-sm">SECHEL</span>
       <span class="font-label text-xs uppercase tracking-widest text-[#e7e0ec]/40">© 2026 SECHEL // OPEN_SOURCE_MEMORY_PROTOCOL</span>

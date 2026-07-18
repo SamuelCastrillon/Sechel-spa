@@ -4,7 +4,7 @@
   import MobileMenu from './MobileMenu.svelte';
 </script>
 
-<nav class="bg-bg text-primary font-headline uppercase tracking-tighter text-sm font-bold fixed top-0 z-50 w-full border-b border-fg/20 flex justify-between items-center px-6 py-4">
+<nav class="bg-bg text-primary font-headline uppercase tracking-tighter text-sm font-bold fixed top-0 z-50 w-full border-b border-fg/20 flex justify-between items-center px-4 md:px-6 py-3 md:py-4">
   <div class="flex items-center gap-8">
     <a href="#top" class="font-display text-xl font-black tracking-widest text-primary no-underline flex items-center gap-1.5">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6">
@@ -24,7 +24,7 @@
         <line x1="16" y1="20" x2="16" y2="22" stroke="currentColor" stroke-width="1" />
         <circle cx="12" cy="12" r="1.5" fill="currentColor" opacity="0.3" />
       </svg>
-      SECHEL_v0.2
+      SECHEL_v0.3
     </a>
     <div class="hidden md:flex items-center gap-6">
       {#each navLinks as link}
