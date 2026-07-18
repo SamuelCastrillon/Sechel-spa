@@ -48,7 +48,7 @@
       <p class="mt-3 max-w-[600px] mx-auto text-[var(--on-surface-variant)]">Open source, transparent, and built for developers.</p>
     </div>
 
-    <div class="flex gap-6 justify-center flex-wrap">
+    <div class="flex-col sm:flex-row flex gap-6 justify-center flex-wrap">
       {#each plans as plan}
         <article
           class="flex-1 min-w-[280px] max-w-[380px] border border-[var(--border)] bg-[var(--surface)] p-8 flex flex-col gap-4"

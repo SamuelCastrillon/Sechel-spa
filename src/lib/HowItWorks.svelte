@@ -19,7 +19,7 @@
 
 <section id="how-it-works" class="relative py-20 md:py-28 technical-grid border-b border-fg/20 overflow-hidden">
   <div class="scanline"></div>
-  <div class="max-w-6xl mx-auto px-6 space-y-24">
+  <div class="max-w-6xl mx-auto px-6 space-y-16 md:space-y-24">
     <!-- Hero Header -->
     <section class="flex flex-col items-start gap-4">
       <div class="flex items-center gap-2 mb-2">
